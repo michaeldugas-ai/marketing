@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Fractional Revenue Officer</title>
+    <meta name="description" content="Thank you for your interest in fractional CRO services.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PKSJM9HTC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0PKSJM9HTC');
+        
+        // Track thank you page view as conversion
+        gtag('event', 'conversion', {
+            'event_category': 'form',
+            'event_label': 'contact_form_success'
+        });
+    </script>
+    
+    <style>
+        :root {
+            --primary-blue: #2B7BA8;
+            --light-blue: #4A9FD8;
+            --accent-blue: #1A5A7D;
+            --dark: #0A1F2E;
+            --light: #F8FAFB;
+            --gray: #4A5568;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent-blue) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 700px;
+            background: var(--white);
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease-out 0.4s backwards;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease-out 0.5s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(43, 123, 168, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--light);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .info-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--light-blue);
+            text-align: left;
+            animation: fadeInUp 0.6s ease-out 0.6s backwards;
+        }
+
+        .info-box h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cta-container {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">✓</div>
+        
+        <h1>Thank You!</h1>
+        
+        <p class="subtitle">Your message has been received.</p>
+        
+        <p class="message">
+            I appreciate your interest in strategic revenue leadership services. 
+            I'll review your inquiry and respond within 24 hours with next steps.
+        </p>
+
+        <div class="cta-container">
+            <a href="https://calendly.com/fractional-revenue-officer" class="cta-button" onclick="gtag('event', 'cta_click', {'event_category': 'thankyou', 'event_label': 'schedule'})">
+                Schedule a Call Now
+            </a>
+            <a href="/" class="cta-button secondary">
+                Return to Home
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>What Happens Next?</h3>
+            <p>📧 <strong>Email confirmation:</strong> Check your inbox for a confirmation of your submission.</p>
+            <p>⏰ <strong>Personal response:</strong> I'll reach out within 24 hours to discuss your revenue challenges.</p>
+            <p>📅 <strong>Or schedule directly:</strong> Skip the wait and book a consultation time that works for you.</p>
+        </div>
+    </div>
+</body>
+</html>
