@@ -587,7 +587,7 @@
       <div class="hero-form-card" id="hero-form">
         <p class="form-heading">Get Your Free Marketing Audit</p>
         <p class="form-sub">Discover exactly what's holding your business back — no cost, no commitment.</p>
-        <form id="leadForm" name="marketing-audit-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <form id="leadForm" name="marketing-audit-request" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="marketing-audit-request" />
           <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
           <div class="form-row">
@@ -952,7 +952,7 @@
       <span class="badge">Limited Spots Available</span>
       <h2 id="ctaHeading">Ready to Grow? Start with a <span style="color:rgba(255,255,255,.85)">Free Audit.</span></h2>
       <p>Get a comprehensive analysis of your current marketing, your biggest growth opportunities, and a clear roadmap — completely free, with zero pressure or obligation.</p>
-      <form id="ctaForm" name="marketing-cta-email" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+      <form id="ctaForm" name="marketing-cta-email" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
         <input type="hidden" name="form-name" value="marketing-cta-email" />
         <div class="cta-form-row">
           <input type="email" id="ctaEmail" name="email" placeholder="Enter your business email" required autocomplete="email" aria-label="Business email" />
@@ -1075,39 +1075,32 @@
 
   /* ── Lead form ── */
   document.getElementById('leadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
     var form = this;
     var firstName = form.querySelector('#firstName').value.trim();
     var email     = form.querySelector('#email').value.trim();
     var business  = form.querySelector('#business').value.trim();
 
     if (!firstName || !email || !business) {
-      var empty = form.querySelector('[required]:placeholder-shown, [required][value=""]');
-      // simple validation feedback
+      e.preventDefault();
       form.querySelectorAll('[required]').forEach(function(el) {
         if (!el.value.trim()) {
           el.style.borderColor = '#f87171';
           el.addEventListener('input', function() { el.style.borderColor = ''; }, { once: true });
         }
       });
-      return;
     }
-
-    showToast();
-    form.reset();
+    // validation passed — form submits naturally to Netlify, which redirects to /thank-you.html
   });
 
   /* ── CTA form ── */
   document.getElementById('ctaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
     var emailEl = document.getElementById('ctaEmail');
     if (!emailEl.value.trim() || !emailEl.value.includes('@')) {
+      e.preventDefault();
       emailEl.style.borderColor = '#f87171';
       emailEl.addEventListener('input', function() { emailEl.style.borderColor = ''; }, { once: true });
-      return;
     }
-    showToast();
-    this.reset();
+    // validation passed — form submits naturally to Netlify, which redirects to /thank-you.html
   });
 
   /* ── Animate numbers on scroll ── */
